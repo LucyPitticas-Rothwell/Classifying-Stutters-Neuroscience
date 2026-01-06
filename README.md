@@ -1,38 +1,4 @@
-# The question
-
-Can the occurence of verbal stutters be classified using neural readings?
-
-# Overview
-
-This repository contains code used in a neuroscience research project which aimed to classify verbal stutter events by applying machine learning to neural (EEG and fNIRS) data. It also contains the [full study write up](https://github.com/LucyRothwell/Classifying-Stutters-Neuroscience/blob/master/Thesis%20paper.pdf) ("Thesis paper"). Grade for project: 80% (dissertation for MSc in Psychology Research Methods, UCL).
-
-# The data
-
-4 participants each with 14,000 samples (0.1 second readings) of fNIRS neural readings and 14,000 (0.1 second readings) of EEG neural readings. Labelled.
-
-Participants were males who experience child onset fluency disorder (stuttering). Participants were linked up to fNIRS and EEG neural imaging technology and recorded speaking for around 20 minutes at a time. The audio recordings allowed the stutter events to be time-labelled using Audacity software (see script below). These markings could then be used to label the stutters in the fNIRS/EEG csv files, for use in classification. 
-
-Pre-processing included digital signal procesing; bandpass filtering, wavelet filtering, channel pruning and artefact removal.
-
-# The code
-
-1. **A [script](https://github.com/LucyRothwell/Classifying-Stutters-Neuroscience/blob/master/Labelling_script_final.py) that labels stutter events (1 or 0) on the EEG and fNIRS readings stored in csv files.** In each participant's EEG/fNIRS csv files, there were appropximately 14,000 rows each representing a 0.1 second neural reading. Of these 14,000 rows, around 5% represented stutter events. This script takes as input, the markings from the audio file showing the start and end times of the stutters (they lasted between 0.2 and 3 seconds), and time-syncs these with the fNIRS and EEG data recordings. It then prints a column of 1s and 0s, which can be inserted into the y column "stutter" on the fNIRS/EEG csv exports, meaning each row of data (0.1 second neural reading) is now labelled as being a stutter (1) or not a stutter (0). This labelled csv is then inputted to the machine learning classifiers. This process is explained in detail in the code comments. There is also a [medium article](https://medium.com/@lucy.m.rothwell/labelling-time-series-data-in-python-af62325e8f60) on this process.
-
-2. **The machine learning [script](https://github.com/LucyRothwell/Classifying-Stutters-Neuroscience/blob/master/ML%20script%20(SVM%2C%20RF%2C%20KNN%2C%20LOGR).py)** used to classifiy stutter events (using SVM, KNN, Random Forest and Logistic Regression). Explained in the code comments.
-
-# The results
-
-Initial findings are below but a new investigation into overfitting is currently underway (June 2020). To be updated shortly.
-
-<br>
-<br>
-<br>
-<br>
-
-##########################################################################################
-
-
-# Technical Abstract
+# Abstract - research report
 
 **Objective**
 
@@ -50,4 +16,25 @@ Four machine learning algorithms (K-Nearest Neighbour, Support Vector Machine, L
 **Findings**
 
 The balanced data (50% stutter, 50% non-stutter) performed better across both classes and so was used throughout. The best performing machine learning algorithm was random forest on the fNIRS data which correctly classified stutters versus non-stutters with an accuracy (measured by AUC) of 0.90. The third joint highest performers were the KNN and the SVM on the EEG IC data and the SVM on the full EEG set of EEG channel data, all with an AUC 0.67. This suggests machine learning can classify stutters through fNIRS data which is a critical step towards prediction-based intervention. Stutters could potentially be classified through EEG data with some adjustments. These are explained in the discussion section.
+
+
+
+
+# Technical overview / this repository
+
+This repository contains code used in a neuroscience research project which aimed to classify verbal stutter events by applying machine learning to neural (EEG and fNIRS) data. It also contains the [full study write up](https://github.com/LucyRothwell/Classifying-Stutters-Neuroscience/blob/master/Thesis%20paper.pdf) ("Thesis paper"). Grade for project: 80% (dissertation for MSc in Psychology Research Methods, UCL).
+
+## The data
+
+4 participants each with 14,000 samples (0.1 second readings) of fNIRS neural readings and 14,000 (0.1 second readings) of EEG neural readings. Labelled.
+
+Participants were males who experience child onset fluency disorder (stuttering). Participants were linked up to fNIRS and EEG neural imaging technology and recorded speaking for around 20 minutes at a time. The audio recordings allowed the stutter events to be time-labelled using Audacity software (see script below). These markings could then be used to label the stutters in the fNIRS/EEG csv files, for use in classification. 
+
+Pre-processing included digital signal procesing; bandpass filtering, wavelet filtering, channel pruning and artefact removal.
+
+## The code
+
+1. **labelling_script.py labels stutter events (1 or 0) on the EEG and fNIRS readings stored in csv files.** In each participant's EEG/fNIRS csv files, there were appropximately 14,000 rows each representing a 0.1 second neural reading. Of these 14,000 rows, around 5% represented stutter events. This script takes as input, the markings from the audio file showing the start and end times of the stutters (they lasted between 0.2 and 3 seconds), and time-syncs these with the fNIRS and EEG data recordings. It then prints a column of 1s and 0s, which can be inserted into the y column "stutter" on the fNIRS/EEG csv exports, meaning each row of data (0.1 second neural reading) is now labelled as being a stutter (1) or not a stutter (0). This labelled csv is then inputted to the machine learning classifiers. This process is explained in detail in the code comments. There is also a [medium article](https://medium.com/@lucy.m.rothwell/labelling-time-series-data-in-python-af62325e8f60) on this process.
+
+2. **runner.py contains data cleaning and the machine learning used to classifiy stutter events (using SVM, KNN, Random Forest and Logistic Regression). Explained in the code comments.
 
