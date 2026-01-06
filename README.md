@@ -23,7 +23,7 @@ The balanced data (50% stutter, 50% non-stutter) performed better across both cl
 [Full research project write-up.](https://github.com/LucyPitticas-Rothwell/Classifying-Stutters-Neuroscience/blob/master/Full%20write-up%20(dissertation).pdf)
 
 
-# Technical overview / this repository
+## Technical overview / run instructions (this repo)
 
 This repository contains code used in a neuroscience research project which aimed to classify verbal stutter events by applying machine learning to neural (EEG and fNIRS) data. It also contains the [full study write up](https://github.com/LucyRothwell/Classifying-Stutters-Neuroscience/blob/master/Thesis%20paper.pdf) ("Thesis paper"). Grade for project: 80% (dissertation for MSc in Psychology Research Methods, UCL).
 
