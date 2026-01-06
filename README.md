@@ -24,7 +24,7 @@ The balanced data (50% stutter, 50% non-stutter) performed better across both cl
 
 This repository contains code used in a neuroscience research project which aimed to classify verbal stutter events by applying machine learning to neural (EEG and fNIRS) data. It also contains the [full study write up](https://github.com/LucyRothwell/Classifying-Stutters-Neuroscience/blob/master/Thesis%20paper.pdf) ("Thesis paper"). Grade for project: 80% (dissertation for MSc in Psychology Research Methods, UCL).
 
-**The data**
+### The data
 
 4 participants each with 14,000 samples (0.1 second readings) of fNIRS neural readings and 14,000 (0.1 second readings) of EEG neural readings. Labelled.
 
@@ -32,7 +32,7 @@ Participants were males who experience child onset fluency disorder (stuttering)
 
 Pre-processing included digital signal procesing; bandpass filtering, wavelet filtering, channel pruning and artefact removal.
 
-**The code**
+## The code
 
 1. **labelling_script.py labels stutter events (1 or 0) on the EEG and fNIRS readings stored in csv files.** In each participant's EEG/fNIRS csv files, there were appropximately 14,000 rows each representing a 0.1 second neural reading. Of these 14,000 rows, around 5% represented stutter events. This script takes as input, the markings from the audio file showing the start and end times of the stutters (they lasted between 0.2 and 3 seconds), and time-syncs these with the fNIRS and EEG data recordings. It then prints a column of 1s and 0s, which can be inserted into the y column "stutter" on the fNIRS/EEG csv exports, meaning each row of data (0.1 second neural reading) is now labelled as being a stutter (1) or not a stutter (0). This labelled csv is then inputted to the machine learning classifiers. This process is explained in detail in the code comments. There is also a [medium article](https://medium.com/@lucy.m.rothwell/labelling-time-series-data-in-python-af62325e8f60) on this process.
 
