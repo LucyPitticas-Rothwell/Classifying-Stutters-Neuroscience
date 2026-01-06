@@ -1,4 +1,7 @@
-# Abstract - research report
+# Using Machine Learning to Classify Stutter Events using fNIRS and EEG data (2019)
+_My MSc Psychological Sciences dissertation research project_
+
+## Abstract 
 
 **Objective**
 
@@ -17,7 +20,7 @@ Four machine learning algorithms (K-Nearest Neighbour, Support Vector Machine, L
 
 The balanced data (50% stutter, 50% non-stutter) performed better across both classes and so was used throughout. The best performing machine learning algorithm was random forest on the fNIRS data which correctly classified stutters versus non-stutters with an accuracy (measured by AUC) of 0.90. The third joint highest performers were the KNN and the SVM on the EEG IC data and the SVM on the full EEG set of EEG channel data, all with an AUC 0.67. This suggests machine learning can classify stutters through fNIRS data which is a critical step towards prediction-based intervention. Stutters could potentially be classified through EEG data with some adjustments. These are explained in the discussion section.
 
-__[Full research write-up](https://github.com/LucyPitticas-Rothwell/Classifying-Stutters-Neuroscience/blob/master/Full%20write-up%20(dissertation).pdf).__
+[Full research project write-up.](https://github.com/LucyPitticas-Rothwell/Classifying-Stutters-Neuroscience/blob/master/Full%20write-up%20(dissertation).pdf)
 
 
 # Technical overview / this repository
